@@ -13,3 +13,6 @@ func conexionBD() *sql.DB {
 	server := "miserver"
     ...
 ```
+
+## Ejecutar
+go run src/main.go
