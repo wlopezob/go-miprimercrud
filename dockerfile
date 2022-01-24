@@ -1,4 +1,4 @@
-FROM golang:1.17 AS builder
+FROM golang:alpine AS builder
 RUN apt-get update
 ENV GOO111MODULE=on \
     CGO_ENABLED=0 \
