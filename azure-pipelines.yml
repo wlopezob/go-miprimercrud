@@ -23,9 +23,13 @@ steps:
     command: 'login'
     addPipelineData: false
     addBaseImageData: false
+
 - task: Docker@2
   inputs:
     containerRegistry: 'dockerhub'
-    repository: 'wlopezob/go-primercrud'
+    repository: 'wlopezob/goprimercrud'
     command: 'buildAndPush'
     Dockerfile: '**/dockerfile'
+    addPipelineData: false
+    addBaseImageData: false
+
