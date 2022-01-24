@@ -9,22 +9,17 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-variables:
-  GOBIN:  '$(GOPATH)/bin' # Go binaries path
-  GOROOT: '/usr/local/go1.11' # Go installation path
-  GOPATH: '$(system.defaultWorkingDirectory)/gopath' # Go workspace path
-  modulePath: '$(GOPATH)/src/github.com/$(build.repository.name)' # Path to the module's code
 
 steps:
 
 - task: Docker@2
   inputs:
-    containerRegistry: 'dockerhub'
+    containerRegistry: 'dockerhub01'
     command: 'login'
 
 - task: Docker@2
   inputs:
-    containerRegistry: 'dockerhub'
+    containerRegistry: 'dockerhub01'
     repository: 'wlopezob/goprimercrud'
     command: 'build'
     Dockerfile: '**/dockerfile'
