@@ -10,9 +10,10 @@ COPY go.mod .
 RUN go mod download
 COPY . .
 RUN go build src/main.go
+CMD [ "./main" ]
 
 # Building image with the binary
-FROM scratch
-COPY --from=builder /go/src/app .
-EXPOSE 8080
-ENTRYPOINT ["/main"]
+#FROM scratch
+#COPY --from=builder /go/src/app .
+#EXPOSE 8080
+#ENTRYPOINT ["/main"]
